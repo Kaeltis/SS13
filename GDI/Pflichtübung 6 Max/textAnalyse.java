@@ -51,7 +51,7 @@ public class textAnalyse {
 			setting -= 26;
 		}
 
-		char[] textArray = Text.toCharArray();
+		char[] textArray = text.toCharArray();
 
 		for (int i = 0; i < textArray.length; i++) {
 			if ((textArray[i] >= 'A' && textArray[i] <= 'Z')
