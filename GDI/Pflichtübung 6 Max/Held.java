@@ -40,9 +40,10 @@ class Held {
 
     public String angriffMonster(Monster gegner) {
         int lebensPunkteBeginn = gegner.getLebenspunkte();
+        int monsterSchaden=0;
         int erfahrungspunkte = gegner.createSchaden(berechneHeldSchaden(gegner));
-        int monsterSchaden = gegner.getKonter(this.Stufe);
         if (gegner.getLebenspunkte() > 0) {
+            monsterSchaden = gegner.getKonter(this.Stufe);
             Lebenspunkte -= monsterSchaden;
         }
         if (Lebenspunkte > 0) {
@@ -54,12 +55,11 @@ class Held {
                     this.Stufe++;
                     this.Lebenspunkte = 100;
                     assert this.Lebenspunkte == 100;
-                    System.out.println("Harte Kämpfe zahlen sich aus! Du bist eine Stufe aufgestiegen! Du bist nun Stufe "+this.Stufe);
+                    System.out.println("Harte Kämpfe zahlen sich aus! Du bist eine Stufe aufgestiegen! Du bist nun Stufe " + this.Stufe);
                 }
                 return "Du hast das Monster mit " + (lebensPunkteBeginn - gegner.getLebenspunkte()) + " Schaden niedergestreckt und erhälst " + erfahrungspunkte + " Erfahrungspunkte.";
             }
-        }
-        else{
+        } else {
             return "Du bist tot.";
         }
 
@@ -80,7 +80,7 @@ class Held {
             while (heldenLevel <= obergrenze && !ende) {
                 if (Stufe == heldenLevel) {
                     schaden = würfeln(wuerfelAnzahl, wuerfel);
-                    schaden *= (int)(Math.round(pruefeSchwaechenUndStaerken(gegner.getArt())));
+                    schaden *= (int) (Math.round(pruefeSchwaechenUndStaerken(gegner.getArt())));
                     ende = true;
                 }
                 verechnungsWert += 2;
