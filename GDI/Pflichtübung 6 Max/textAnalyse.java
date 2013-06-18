@@ -73,7 +73,7 @@ public class textAnalyse {
 		return new String(textArray);
 	}
 
-    public String getUpperLower(String text, boolean setting) {
+    public static String getUpperLower(String text, boolean setting) {
         String ergebnis = "";
         if (!setting) {
             return text.toLowerCase();
