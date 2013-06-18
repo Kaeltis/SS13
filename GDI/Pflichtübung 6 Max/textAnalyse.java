@@ -44,56 +44,34 @@ public class textAnalyse {
     }
 
     public String getCaesarChiffre(int setting) {
-        int countAlphabet = 26;
-        int tmp = 0;
-        int settingCountTop = 0;
-        String ergebnis = "";
-        char[] textArray = text.toCharArray();
-        while (setting >= countAlphabet) {
-            setting -= 26;
-        }
-        for (int i = 0; i < textArray.length; i++) {
-            if (textArray[i] >= 'A' && textArray[i] <= 'Z') {
-                switch (textArray[i]) {
-                    case 'Z':
-                        textArray[i] = (char) ('A' + setting);
-                        break;
-                    default:
-                        while (textArray[i] + setting > 'Z') {
-                            setting--;
-                            settingCountTop++;
-                        }
-                        if (settingCountTop != 0) {
-                            textArray[i] = (char) ('A' + setting);
-                        } else {
-                            textArray[i] += setting;
-                            break;
-                        }
-                }
-            } else if (textArray[i] >= 'a' && textArray[i] <= 'z') {
-                if (textArray[i] >= 'a' && textArray[i] <= 'z') {
-                    switch (textArray[i]) {
-                        case 'z':
-                            textArray[i] = (char) ('a' + setting);
-                            break;
-                        default:
-                            while (textArray[i] + setting > 'z') {
-                                setting--;
-                                settingCountTop++;
-                            }
-                            if (settingCountTop != 0) {
-                                textArray[i] = (char) ('a' + setting);
-                            } else {
-                                textArray[i] += setting;
-                                break;
-                            }
-                    }
-                }
-            }
-            ergebnis += String.valueOf(textArray[i]);
-        }
-        return ergebnis;
-    }
+		// gibt den String als eine Verschiebechiffre zurück, dabei gibt setting
+		// die Anzahl der Stellen an, um die verschoben wird.
+
+		while (setting >= 26) {
+			setting -= 26;
+		}
+
+		char[] textArray = Text.toCharArray();
+
+		for (int i = 0; i < textArray.length; i++) {
+			if ((textArray[i] >= 'A' && textArray[i] <= 'Z')
+					|| (textArray[i] >= 'a' && textArray[i] <= 'z')) {
+				switch (textArray[i]) {
+				case 'Z':
+					textArray[i] = (char) ('A' + setting);
+					break;
+				case 'z':
+					textArray[i] = (char) ('a' + setting);
+					break;
+				default:
+					textArray[i] += setting;
+					break;
+				}
+			}
+		}
+
+		return new String(textArray);
+	}
 
     public String getUpperLower(String text, boolean setting) {
         String ergebnis = "";
