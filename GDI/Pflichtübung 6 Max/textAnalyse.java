@@ -17,9 +17,10 @@ public class textAnalyse {
         this.text = text.replace("ä", "ae");
         this.text = text.replace("ö", "oe");
         this.text = text.replace("ü", "ue");
-        this.text = text.replace("ä", "AE");
-        this.text = text.replace("ö", "OE");
-        this.text = text.replace("ü", "UE");
+        this.text = text.replace("Ä", "AE");
+        this.text = text.replace("Ö", "OE");
+        this.text = text.replace("Ü", "UE");
+		this.text = text.replace("ß", "ss");
     }
 
 
