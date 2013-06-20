@@ -1,3 +1,8 @@
+/**
+ * Max Jando - 1312825 / Patrick Fruh - 1314827
+ * Listenelement der Playlist
+ */
+
 package queue.playlist;
 
 public class PlaylistElement {

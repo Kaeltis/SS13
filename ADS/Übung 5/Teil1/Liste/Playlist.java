@@ -1,3 +1,8 @@
+/**
+ * Max Jando - 1312825 / Patrick Fruh - 1314827
+ * Durch Liste realisierte Playlist
+ */
+
 package queue.playlist;
 
 import java.io.BufferedReader;
