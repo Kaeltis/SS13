@@ -5,12 +5,7 @@
 
 package queue.playlist;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-
-import javax.sound.midi.MidiMessage;
+import java.io.*;
 
 public class Playlist {
 
@@ -46,10 +41,10 @@ public class Playlist {
 	}
 
 	/**
-	 * †bergebener Musiktitel wird am Ende der Playlist hinzugefŸgt
+	 * †bergebener Musiktitel wird am Ende der Playlist hinzugefügt
 	 * 
 	 * @param neuerMusiktitel
-	 *            Der Musiktitel, der der Playlist hinzugefŸgt werden soll.
+	 *            Der Musiktitel, der der Playlist hinzugefügt werden soll.
 	 */
 	public void hinzufuegenAmEnde(Musiktitel neuerMusiktitel) {
 		if (root != null) {
@@ -131,29 +126,29 @@ public class Playlist {
 
 		int stelleTabulator = 0;
 		String titel = "";
-		String künstler = "";
+		String kuenstler = "";
 		FileReader eingabestrom = new FileReader(file);
 		BufferedReader eingabe = new BufferedReader(eingabestrom);
 		String eingabeZeile = eingabe.readLine();
 		// Verarbeitungsschleife, solange nicht EOF
 		while (eingabeZeile != null) {
 			// Verarbeitung von eingabeZeile genau wie bisher über
-			// die Tastatur (ggf. StringTokenizer, …parse…() etc.)
+			// die Tastatur (ggf. StringTokenizer, ...parse..() etc.)
 			stelleTabulator = eingabeZeile.lastIndexOf("\t".toString());
 			for (int buchstabeTitel = 0; buchstabeTitel < stelleTabulator; buchstabeTitel++) {
 				titel += String.valueOf(eingabeZeile.charAt(buchstabeTitel));
 			}
-			for (int buchstabeKünstler = stelleTabulator + 1; buchstabeKünstler < eingabeZeile
-					.length(); buchstabeKünstler++) {
-				künstler += String.valueOf(eingabeZeile
-						.charAt(buchstabeKünstler));
+			for (int buchstabeKuenstler = stelleTabulator + 1; buchstabeKuenstler < eingabeZeile
+					.length(); buchstabeKuenstler++) {
+				kuenstler += String.valueOf(eingabeZeile
+						.charAt(buchstabeKuenstler));
 			}
-			hinzufuegenAmEnde(new Musiktitel(künstler, titel));
-			künstler = "";
+			hinzufuegenAmEnde(new Musiktitel(kuenstler, titel));
+			kuenstler = "";
 			titel = "";
 			eingabeZeile = eingabe.readLine();
 		}
-		eingabe.close(); // Datei schließen*/
+		eingabe.close(); // Datei schließen
 
 	}
 
@@ -194,7 +189,7 @@ public class Playlist {
 	}
 
 	/**
-	 * Der Ÿbergebene Musiktitel wird in der Playlist eine Position zurŸck
+	 * Der übergebene Musiktitel wird in der Playlist eine Position zurück
 	 * bewegt.
 	 * 
 	 * @param musiktitel
@@ -242,7 +237,7 @@ public class Playlist {
 	}
 
 	/**
-	 * VerŠndert den Namen dieser Playlist
+	 * Verändert den Namen dieser Playlist
 	 * 
 	 * @param name
 	 *            Der neue Name dieser Playlist
@@ -252,7 +247,7 @@ public class Playlist {
 	}
 
 	/**
-	 * HŠngt eine andere Playlist an diese Playlist an.
+	 * Hängt eine andere Playlist an diese Playlist an.
 	 */
 	public void haengePlaylistAn(Playlist anderePlaylist) {
 
