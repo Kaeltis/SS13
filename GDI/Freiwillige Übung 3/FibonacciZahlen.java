@@ -14,8 +14,9 @@ public class FibonacciZahlen {
 
     public static void main(String[] args) {
 
-        long eingabe = 0;
+        long eingabe;
         Scanner in = new Scanner(System.in);
+        in.close();
         System.out.println("Programm zum Ausgeben der Fibonacci-Zahlen.");
         System.out.println("Bitte geben Sie eine ganze Zahl >= 0 ein.");
 
