@@ -16,12 +16,12 @@ public class FibonacciZahlen {
 
         long eingabe;
         Scanner in = new Scanner(System.in);
-        in.close();
+
         System.out.println("Programm zum Ausgeben der Fibonacci-Zahlen.");
         System.out.println("Bitte geben Sie eine ganze Zahl >= 0 ein.");
 
         eingabe = in.nextInt();
-
+        in.close();
         System.out.println("Die Fibo-Zahl von " + eingabe + " ist " + fibonacciRek(eingabe));
         System.out.println("Anzahl Aufrufe: "+counter);
     }
