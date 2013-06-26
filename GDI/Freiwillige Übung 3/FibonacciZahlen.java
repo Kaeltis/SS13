@@ -23,7 +23,7 @@ public class FibonacciZahlen {
         eingabe = in.nextInt();
         in.close();
         System.out.println("Die Fibo-Zahl von " + eingabe + " ist " + fibonacciRek(eingabe));
-        System.out.println("Anzahl Aufrufe: "+counter);
+        System.out.println("Anzahl Aufrufe: " + counter);
     }
 
     public static long fibonacciRek(long zahl) {

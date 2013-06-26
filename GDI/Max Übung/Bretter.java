@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Bretter {
 
@@ -8,20 +8,25 @@ public class Bretter {
         int eingabe;
         System.out.println("Bitte geben Sie eine Zahl für die Bretter ein: ");
         eingabe = in.nextInt();
+        in.close();
         int zweier = eingabe / 2;
 
-        ausgabeBretter(zweier, zweier);
+        ausgabeBretter(zweier, zweier, eingabe);
     }
-    private static void ausgabeBretter(int eingabeRek, int eingabe) {
-        if (eingabeRek > 0) {
-            for (int zweierBretter = 0; zweierBretter < eingabeRek; zweierBretter++) {
+
+    private static void ausgabeBretter(int zweierRek, int zweier, int eingabe) {
+        if (zweierRek > 0) {
+            for (int zweierBretter = 0; zweierBretter < zweierRek; zweierBretter++) {
                 System.out.print(2 + " ");
             }
-            for (int einerBretter = 0; einerBretter < eingabe - eingabeRek; einerBretter++) {
+            if (eingabe % 2 > 0) {
+                System.out.print(1 + " ");
+            }
+            for (int einerBretter = 0; einerBretter < zweier - zweierRek; einerBretter++) {
                 System.out.print(1 + " " + 1 + " ");
             }
             System.out.println();
-            ausgabeBretter(eingabeRek - 1, eingabe);
+            ausgabeBretter(zweierRek - 1, zweier, eingabe);
         }
     }
 
