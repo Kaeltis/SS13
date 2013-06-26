@@ -22,7 +22,7 @@ public class Bretter {
             if (eingabe % 2 > 0) {
                 System.out.print(1 + " ");
             }
-            for (int einerBretter = 0; einerBretter < zweier - zweierRek; einerBretter++) {
+            for (int einerBretter = 0; einerBretter < (zweier - zweierRek); einerBretter++) {
                 System.out.print(1 + " " + 1 + " ");
             }
             System.out.println();
